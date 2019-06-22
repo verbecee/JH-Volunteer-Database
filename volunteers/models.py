@@ -21,7 +21,7 @@ class Volunteer(models.Model):
     emergency_address = models.CharField(max_length=50)
     emergency_phone = models.CharField(max_length=12, validators=[MinLengthValidator(7, "Please enter a valid phone number (xxx-xxx-xxxx).")])
     notes = models.CharField()
-    cross_cultural_experience = models.CharField()
+    cross_cultural_experiences = models.CharField()
     why_FDPs = models.CharField()
     spirituality = models.CharField()
 
