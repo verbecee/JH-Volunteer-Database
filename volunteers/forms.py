@@ -1,7 +1,7 @@
 from .models import *
 from django.forms import ModelForm
 
-class VolunteerForm(ModelForm):
+class VolunteerForm(forms.ModelForm):
     class Meta:
         model = Volunteer
         fields = ['last_name',
@@ -26,30 +26,51 @@ class VolunteerForm(ModelForm):
                   'spirituality'
                   ]
 
-class InterestForm(ModelForm):
+class InterestForm(forms.ModelForm):
     class Meta:
         model = Interest
-        fields = ['interest_name'
+        fields = ['volunteer',
+                  'interest_name'
                   ]
 
-    # class Author(models.Model):
-    #     name = models.CharField(max_length=100)
-    #     title = models.CharField(max_length=3, choices=TITLE_CHOICES)
-    #     birth_date = models.DateField(blank=True, null=True)
-    #
-    #     def __str__(self):
-    #         return self.name
-    #
-    # class Book(models.Model):
-    #     name = models.CharField(max_length=100)
-    #     authors = models.ManyToManyField(Author)
-    #
-    # class AuthorForm(ModelForm):
-    #     class Meta:
-    #         model = Author
-    #         fields = ['name', 'title', 'birth_date']
-    #
-    # class BookForm(ModelForm):
-    #     class Meta:
-    #         model = Book
-    #         fields = ['name', 'authors']
+class LanguageForm(forms.ModelForm):
+    class Meta:
+        model = Language
+        fields = ['volunteer',
+                  'language_name',
+                  'level_fluent'
+                  ]
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ['volunteer',
+                  'event_name',
+                  'event_date',
+                  'event_description'
+                  ]
+
+class OrganizationAffiliationForm(forms.ModelForm):
+    class Meta:
+        model = OrganizationAffiliation
+        fields = ['volunteer',
+                  'organization_name'
+                  ]
+
+class TrainingForm(forms.ModelForm):
+    class Meta:
+        model = Training
+        fields = ['volunteers',
+                  'training_type',
+                  'training_url',
+                  'training_complete'
+                    ]
+
+class RoleForm(models.Model):
+    class Meta:
+        model = Role
+        fields = ['trainings',
+                  'volunteer',
+                  'role_name'
+                  ]
+
