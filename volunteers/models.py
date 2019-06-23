@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
-from django.forms import ModelForm
 # Create your models here.
 
 class Volunteer(models.Model):
