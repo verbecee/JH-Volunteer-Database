@@ -20,10 +20,10 @@ class Volunteer(models.Model):
     emergency_first_name = models.CharField(max_length=30)
     emergency_address = models.CharField(max_length=50)
     emergency_phone = models.CharField(max_length=12, validators=[MinLengthValidator(7, "Please enter a valid phone number (xxx-xxx-xxxx).")])
-    notes = models.CharField()
-    cross_cultural_experiences = models.CharField()
-    why_FDPs = models.CharField()
-    spirituality = models.CharField()
+    notes = models.CharField(max_length=600)
+    cross_cultural_experiences = models.CharField(max_length=600)
+    why_FDPs = models.CharField(max_length=600)
+    spirituality = models.CharField(max_length=600)
 
 class Interest(models.Model):
     volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
