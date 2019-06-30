@@ -4,7 +4,6 @@ from django import forms
 # comments from Josh
 # Drop down of the calendar for birth days
 
-
 class VolunteerForm(forms.ModelForm):
     last_name = forms.CharField(
         max_length=30,
@@ -112,7 +111,38 @@ class VolunteerForm(forms.ModelForm):
             }
         )
     )
+    emergency_last_name = forms.CharField(
+        max_length=30,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
+    )
+    emergency_first_name = forms.CharField(
+        max_length=30,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
+    )
+    emergency_address = forms.CharField(
+        max_length=50,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
+    )
+    emergency_phone = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
 
+    )
     notes = forms.CharField(
         widget=forms.Textarea(
             attrs={
