@@ -1,7 +1,10 @@
 from .models import *
 from django.forms import ModelForm
 
+# if you from django.forms import ModelForm then in form class should inherit from ModelForm else it should be forms.ModelForm so correct that error
+
 class VolunteerForm(forms.ModelForm):
+    # class VolunteerForm(ModelForm):
     class Meta:
         model = Volunteer
         fields = ['last_name',
