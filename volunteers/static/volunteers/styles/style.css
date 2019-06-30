@@ -1,16 +1,26 @@
 
 
 img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 10%;
 }
 
-.headlogo{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: rgb(6, 114, 238);
+.logogroup{
+    background:rgba(7, 141, 52, 0.829);
+   
+}
+
+.textwhite{
+    color: black;
+}
+
+.txt_instruct{
+    color: rgb(255, 255, 255);
+}
+
+.heading_all{
+    background:rgb(163, 46, 46);
 }
 
 .logo{
-    text-align: right;
+    text-align: left;
 }
