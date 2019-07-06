@@ -4,10 +4,8 @@ from django.core.validators import MinLengthValidator
 
 
 class Volunteer(models.Model):
-    last_name = models.CharField(max_length=30, validators=[
-                                 MinLengthValidator(1, "Please enter a valid name.")])
-    first_name = models.CharField(max_length=30, validators=[
-                                  MinLengthValidator(1, "Please enter a valid name.")])
+    last_name = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30)
     middle_name = models.CharField(max_length=30)
 
     gender = models.CharField(
@@ -18,7 +16,7 @@ class Volunteer(models.Model):
             ("O", "Others")
         )
     )
-    birth_date = models.DateField('Date of birth')
+    birth_date = models.DateField(blank=True, null=True)
     # for birth dates, i would go with DateField
     physical_limitations = models.CharField(
         max_length=5,
@@ -28,30 +26,38 @@ class Volunteer(models.Model):
         )
     )
     physical_explanation = models.TextField(blank=True, null=True)
-    street_address = models.CharField(max_length=50, validators=[
-                                      MinLengthValidator(1, "Please enter a valid address.")])
-    state = models.CharField(max_length=2, validators=[MinLengthValidator(
-        2, "Please enter a valid state abbreviation.")])
-    zip_code = models.CharField(max_length=5, validators=[
-                                MinLengthValidator(5, "Please enter a valid zipcode.")])
-    phone = models.CharField(max_length=12, validators=[MinLengthValidator(
-        7, "Please enter a valid phone number (xxx-xxx-xxxx).")])
-    email = models.EmailField(max_length=40, validators=[
-        MinLengthValidator(4, "Please enter a valid email.")])
-    emergency_last_name = models.CharField(max_length=30)
-    emergency_first_name = models.CharField(max_length=30)
-    emergency_address = models.CharField(max_length=50)
-    emergency_phone = models.IntegerField(validators=[MinLengthValidator(
-        7, "Please enter a valid phone number (xxx-xxx-xxxx).")])
+    street_address = models.CharField(max_length=50)
+    state = models.CharField(max_length=2)
+    zip_code = models.CharField(max_length=5)
+    phone = models.CharField(max_length=12)
+    email = models.EmailField(max_length=40)
     notes = models.CharField(max_length=600)
     cross_cultural_experiences = models.CharField(max_length=600)
     why_FDPs = models.CharField(max_length=600)
     spirituality = models.CharField(max_length=600)
 
+    def __str__(self):
+        return f"{self.last_name} {self.first_name}"
+
+
+class VolEmgtCtct(models.Model):
+    volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
+    e_last_name = models.CharField(max_length=30)
+    e_first_name = models.CharField(max_length=30)
+    e_address = models.CharField(max_length=50)
+    e_email = models.EmailField()
+    e_phone = models.CharField(max_length=12)
+
+    def __str__(self):
+        return f"{self.e_last_name} {self.e_first_name} is {self.volunteer}'s contact"
+
 
 class Interest(models.Model):
     volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
     interest_name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.interest_name}"
 
 
 class Language(models.Model):
@@ -69,32 +75,46 @@ class Language(models.Model):
 
     )
 
+    def __str__(self):
+        return f"{self.language_name}"
+
 
 class Event(models.Model):
     volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
-    event_name = models.CharField(max_length=100, validators=[
-                                  MinLengthValidator(1, "Please enter a valid event name.")])
+    event_name = models.CharField(max_length=100)
     event_date = models.DateTimeField('Event date')
     event_description = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.event_name}"
 
 
 class OrganizationAffiliation(models.Model):
     volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
-    organization_name = models.CharField(max_length=50, validators=[
-                                         MinLengthValidator(1, "Please enter a valid organization name.")])
+    organization_name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.organization_name}"
 
 
 class Training(models.Model):
     volunteers = models.ManyToManyField(Volunteer)
+    training_name = models.CharField(
+        max_length=130)
     training_type = models.CharField(
-        max_length=30, validators=[MinLengthValidator(1)])
+        max_length=30)
     training_url = models.CharField(
-        max_length=1000, validators=[MinLengthValidator(1)])
-    training_complete = models.IntegerField(default=0)
+        max_length=1000)
+    training_complete = models.BooleanField()
+
+    def __str__(self):
+        return f"{self.training_name} is completed?...:{self.training_complete}"
 
 
 class Role(models.Model):
     trainings = models.ManyToManyField(Training)
     volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
-    role_name = models.CharField(max_length=30, validators=[
-                                 MinLengthValidator(1)])
+    role_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f"{self.role_name}"

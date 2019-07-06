@@ -1,5 +1,8 @@
-from .models import Volunteer, Interest, Language, Event, OrganizationAffiliation, Training, Role
+from .models import Volunteer, Interest, Language, Event, OrganizationAffiliation, Training, Role, VolEmgtCtct
 from django import forms
+
+# comments from Josh
+# Drop down of the calendar for birth days
 
 
 class VolunteerForm(forms.ModelForm):
@@ -39,8 +42,10 @@ class VolunteerForm(forms.ModelForm):
             }
         )
     )
+    YEARS = [x for x in range(1950, 2002)]
     birth_date = forms.DateField(
-        widget=forms.DateInput(
+        widget=forms.SelectDateWidget(
+            years=YEARS,
             attrs={
                 'class': 'form-control',
                 'placeholder': "Month Day Year"
@@ -107,38 +112,7 @@ class VolunteerForm(forms.ModelForm):
             }
         )
     )
-    emergency_last_name = forms.CharField(
-        max_length=30,
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control'
-            }
-        )
-    )
-    emergency_first_name = forms.CharField(
-        max_length=30,
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control'
-            }
-        )
-    )
-    emergency_address = forms.CharField(
-        max_length=50,
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control'
-            }
-        )
-    )
-    emergency_phone = forms.IntegerField(
-        widget=forms.NumberInput(
-            attrs={
-                'class': 'form-control'
-            }
-        )
 
-    )
     notes = forms.CharField(
         widget=forms.Textarea(
             attrs={
@@ -186,10 +160,6 @@ class VolunteerForm(forms.ModelForm):
                   'zip_code',
                   'phone',
                   'email',
-                  'emergency_last_name',
-                  'emergency_first_name',
-                  'emergency_address',
-                  'emergency_phone',
                   'notes',
                   'cross_cultural_experiences',
                   'why_FDPs',
@@ -197,9 +167,71 @@ class VolunteerForm(forms.ModelForm):
                   ]
 
 
+class VolEmgtCtctForm(forms.ModelForm):
+    volunteer = forms.ModelChoiceField(
+        queryset=Volunteer.objects.all(),
+        widget=forms.Select(
+            attrs={
+                "class": "form-control"
+            }
+        )
+    )
+    last_name = forms.CharField(
+        max_length=30,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
+    )
+    first_name = forms.CharField(
+        max_length=30,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
+    )
+    address = forms.CharField(
+        max_length=50,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
+    )
+    phone = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
+
+    )
+
+    email = forms.EmailField(
+        max_length=40,
+        widget=forms.EmailInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
+    )
+
+    class Meta:
+        model = VolEmgtCtct
+        fields = ['volunteer',
+                  'last_name',
+                  'first_name',
+                  'email',
+                  'phone',
+                  'address'
+                  ]
+
+
 class InterestForm(forms.ModelForm):
     volunteer = forms.ModelChoiceField(
-        queryset=Interest.objects.all(),
+        queryset=Volunteer.objects.all(),
         widget=forms.Select(
             attrs={
                 "class": "form-control"
@@ -283,7 +315,7 @@ class EventForm(forms.ModelForm):
         )
     )
     event_date = forms.DateTimeField(
-        widget=forms.DateTimeInput(
+        widget=forms.SelectDateWidget(
             attrs={
                 "class": "form-control"
             }
@@ -343,6 +375,14 @@ class TrainingForm(forms.ModelForm):
         )
 
     )
+    training_name = forms.CharField(
+        max_length=130,
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control"
+            }
+        )
+    )
     training_type = forms.CharField(
         max_length=30,
         widget=forms.TextInput(
@@ -366,6 +406,7 @@ class TrainingForm(forms.ModelForm):
     class Meta:
         model = Training
         fields = ['volunteers',
+                  'training_name',
                   'training_type',
                   'training_url',
                   'training_complete'
@@ -399,7 +440,7 @@ class RoleForm(forms.ModelForm):
 
     class Meta:
         model = Role
-        fields = ['trainings',
-                  'volunteer',
+        fields = ['volunteer',
+                  'trainings',
                   'role_name'
                   ]

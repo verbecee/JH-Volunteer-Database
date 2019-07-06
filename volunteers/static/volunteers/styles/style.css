@@ -1,26 +1,111 @@
-
-
 img {
-    max-width: 10%;
+  max-width: 60%;
+  padding: 0 0rem 0 3rem;
 }
 
-.logogroup{
-    background:rgba(7, 141, 52, 0.829);
-   
+.bground {
+  background: #a81313;
+  padding: 1rem 4rem;
+}
+.bground ul li {
+  padding: 0 0.5rem;
+}
+.bground ul li a {
+  color: white;
+  font-size: 1rem;
+}
+.bground ul li a:hover {
+  color: wheat;
 }
 
-.textwhite{
-    color: black;
+.form {
+  margin: 3rem 0;
 }
 
-.txt_instruct{
-    color: rgb(255, 255, 255);
+.nav-tabs .nav-item {
+  padding: 0.8rem 1.3rem;
+  font-size: 1.3rem;
+  padding-bottom: 2rem;
+  text-decoration: none;
+  color: black;
+}
+.nav-tabs .nav-items {
+  text-decoration: none;
+  border-top: 2px solid red;
+  padding: 0.8rem 1.3rem;
+  font-size: 1.3rem;
+  padding-bottom: 2rem;
+  color: #911212;
+}
+.nav-tabs .nav-item:hover {
+  background: white;
 }
 
-.heading_all{
-    background:rgb(163, 46, 46);
+.tab-content .tab-pane h1 {
+  padding: 1rem 0 1rem 0;
+}
+.tab-content .tab-pane .navigate {
+  margin-bottom: 0.5rem;
+}
+.tab-content .tab-pane .navigate a {
+  background: #b81d1d;
+  font-size: 1.2rem;
+  padding: 0.3rem 1.5rem;
+  border: none;
+  outline: none;
+}
+.tab-content .tab-pane .navigate a:hover {
+  background: #f34c4c;
+  border: none;
+  outline: none;
+}
+.tab-content .form {
+  height: 100%;
+}
+.tab-content .form button {
+  background: #b81d1d;
+  font-size: 1.2rem;
+  padding: 0.3rem 1.5rem;
+  border: none;
+  outline: none;
+}
+.tab-content .form button:hover {
+  background: #f34c4c;
+  border: none;
+  outline: none;
 }
 
-.logo{
-    text-align: left;
+.embed-responsive {
+  margin: 3rem 0 0 0;
+  border: 5px solid red;
 }
+
+footer {
+  padding: 1rem 0;
+  background: #141414;
+  color: #d30d0d;
+}
+footer a {
+  text-decoration: none;
+  color: #ddceb3;
+}
+footer li {
+  list-style: none;
+}
+footer path {
+  fill: white;
+  font-size: 2rem;
+}
+footer .container-fluid .container .gridsystem {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 3rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+footer .container-fluid .container .socialmedia {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 20fr;
+}
+
+/*# sourceMappingURL=style.css.map */

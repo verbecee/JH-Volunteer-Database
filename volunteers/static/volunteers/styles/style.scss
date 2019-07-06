@@ -1,0 +1,160 @@
+img {
+    max-width: 60%;
+    padding: 0 0rem 0 3rem;
+}
+
+// Nav Styles
+.bground {
+    background: rgb(168, 19, 19);
+    padding: 1.0rem 4rem;
+
+    ul {
+        li {
+            padding: 0 .5rem;
+
+            a {
+                color: white;
+                font-size: 1.0rem;
+
+            }
+
+            a:hover {
+                color: wheat;
+            }
+        }
+    }
+}
+
+
+// Togglable Tabs CSS
+
+.form {
+    margin: 3rem 0;
+}
+
+.nav-tabs {
+
+    .nav-item {
+        // background: rgb(238, 238, 238);
+        padding: .8rem 1.3rem;
+        font-size: 1.3rem;
+        padding-bottom: 2rem;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+
+    }
+
+    .nav-items {
+        text-decoration: none;
+        border-top: 2px solid red;
+        padding: .8rem 1.3rem;
+        font-size: 1.3rem;
+        padding-bottom: 2rem;
+        color: rgb(145, 18, 18);
+    }
+
+    .nav-item:hover {
+        background: rgb(255, 255, 255);
+
+    }
+
+}
+
+.tab-content {
+
+    .tab-pane {
+        h1 {
+            padding: 1rem 0 1rem 0;
+        }
+
+        .navigate {
+            margin-bottom: .5rem;
+
+            a {
+                background: rgb(184, 29, 29);
+                font-size: 1.2rem;
+                padding: .3rem 1.5rem;
+                border: none;
+                outline: none;
+                // 
+            }
+
+            a:hover {
+                background: rgb(243, 76, 76);
+                border: none;
+                outline: none;
+            }
+        }
+
+    }
+
+    .form {
+        height: 100%;
+
+        button {
+            background: rgb(184, 29, 29);
+            font-size: 1.2rem;
+            padding: .3rem 1.5rem;
+            border: none;
+            outline: none;
+        }
+
+        button:hover {
+            background: rgb(243, 76, 76);
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+//Video Styles
+.embed-responsive {
+    margin: 3rem 0 0 0;
+    border: 5px solid red;
+}
+
+// Footer CSS
+footer {
+    padding: 1rem 0;
+    background: rgb(20, 20, 20);
+    color: rgb(211, 13, 13);
+
+    a {
+        text-decoration: none;
+        color: rgb(221, 206, 179);
+
+    }
+
+    li {
+        list-style: none;
+    }
+
+    path {
+        fill: white;
+        font-size: 2rem;
+    }
+
+    .container-fluid {
+        .container {
+
+            .gridsystem {
+                // border: 1px solid rgb(138, 138, 138);
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                padding: 3rem;
+                margin: 1rem 0;
+                text-align: center
+            }
+
+            .socialmedia {
+                // border: 1px solid rgb(138, 138, 138);
+
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 20fr;
+
+            }
+        }
+
+    }
+
+}
