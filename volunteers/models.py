@@ -110,8 +110,6 @@ class Training(models.Model):
     def __str__(self):
         return f"{self.training_name} is completed?...:{self.training_complete}"
 
-
-
 class Role(models.Model):
     trainings = models.ManyToManyField(Training)
     volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
