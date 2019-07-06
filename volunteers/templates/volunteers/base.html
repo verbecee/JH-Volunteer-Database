@@ -15,53 +15,388 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="{% static 'volunteers/styles/style.css' %}">
 </head>
 
 <body>
-    <div class="container-fluid logogroup">
-        <div class="headlogo container pt-3 pb-3 mb-3">
-            {% comment %} <div class="txt">
-                <H1 class="textwhite" style="text-transform: uppercase">Jonathan House</H1>
-            </div> {% endcomment %}
-            <div class=" logo pt-1 pb-1">
-                <img src="{% static 'volunteers/img/logo/logo.png' %}" alt="jh_logo">
-            </div>
-        </div>
-    </div>
 
-     <div class="container pt-3">
-        <ul class="nav justify-content-end ">
+    <nav class="navbar navbar-expand-lg bground">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="{% url 'home' %}"><img
+                    src="{% static "volunteers/img/logo/transparent.png" %}" alt="">
+            </a>
+
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'volunteer' %}">Apply to volunteer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Apply for residency</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Media and News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Donate</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+
+    <div class="container-fluid logogroup">
+
+
+
+
+    </div>
+    </div>
+    {% comment %} <div class="container pt-3">
+        <ul class="nav justify-content-end">
             <li class="nav-item">
                 <h4> Hello, {{ user.username }}
                 </h4>
             </li> <br>
-            <li class="nav-item ml-4 ">
+            <li class="nav-item ml-4">
                 <p><a class="btn btn-success btn-sm" href="#">Logout</a></p>
             </li>
         </ul>
         <hr>
-    </div>
+    </div> {% endcomment %}
 
-    <div class="container heading_all pt-3 pb-3">
-        <h1>
-            {% block heading %}
+    {% comment %} <div class="container heading_all pt-3 pb-3">
 
-            {% endblock heading %}
-        </h1>
-    </div>
-  
+        {% block heading %}
+
+        {% endblock heading %}
+
+    </div> {% endcomment %}
+
     {% block body %}
 
     {% endblock %}
 
-    <!-- Optional JavaScript -->
+    <footer>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="uk-section-default uk-section uk-section-small">
+                    <div class="uk-container">
+                        <div class="uk-grid-margin gridsystem uk-grid" uk-grid="">
+                            <div class="uk-width-expand@m uk-width-1-2@s uk-first-column">
+                                <h5> About IAFR </h5>
+                                <ul class="uk-list">
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/about-us" class="el-link">IAFR
+                                                USA</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="http://iafr.ca" target="_blank"
+                                                class="el-link">IAFR Canada</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="uk-width-expand@m uk-width-1-2@s">
+                                <h5> IAFR Projects </h5>
+                                <ul class="uk-list">
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Bibles for
+                                                Refugees</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Dzaleka
+                                                Small Business</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Dzaleka
+                                                Vocational Training</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Jonathan
+                                                House</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Kenya Water
+                                                Project</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">KISOM
+                                                Building Project</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Nicholas
+                                                Gagai Support (Kakuma)</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Refugee
+                                                Center (Lille)</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Refugee
+                                                Church Building Projects</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Refugee
+                                                Scholarships (Kenya)</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Refugee
+                                                Scholarships (Malawi)</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Refugee
+                                                Youth Camp (Kakuma)</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/our-work/projects"
+                                                class="el-link">Shelter for
+                                                Refugees (Kakuma)</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="uk-width-expand@m uk-width-1-2@s">
+                                <h5> Ministry Locations </h5>
+                                <ul class="uk-list">
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/athens"
+                                                class="el-link">Athens</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/atlanta"
+                                                class="el-link">Atlanta</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/malawi-location"
+                                                class="el-link">Dzaleka
+                                                Refugee Camp</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/kenya-location"
+                                                class="el-link">Kakuma Refugee
+                                                Camp</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/france-location"
+                                                class="el-link">Lille</a>
+                                        </div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/madrid"
+                                                class="el-link">Madrid</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/minneapolis"
+                                                class="el-link">Minneapolis/St.
+                                                Paul</a></div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/colorado"
+                                                class="el-link">Northern Colorado</a>
+                                        </div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/ventimiglia"
+                                                class="el-link">Ventimiglia</a>
+                                        </div>
+                                    </li>
+                                    <li class="el-item">
+                                        <div class="el-content uk-panel uk-h6"><a href="/austria"
+                                                class="el-link">Vienna</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="uk-width-expand@m uk-width-1-2@s">
+                            <h5> CONNECT WITH US </h5>
+                            <ul class="uk-list">
+                                <li class="el-item">
+                                    <div class="el-content uk-panel uk-h6"><span
+                                            id="cloak37ab360468cc4fba6817dcaa6df7d0b1"><a
+                                                href="mailto:info@iafr.org">info@iafr.org</a></span>
+                                        <script type="text/javascript">
+                                            document.getElementById('cloak37ab360468cc4fba6817dcaa6df7d0b1')
+                                                .innerHTML = '';
+                                            var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+                                            var path = 'hr' + 'ef' + '=';
+                                            var addy37ab360468cc4fba6817dcaa6df7d0b1 = '&#105;nf&#111;' + '&#64;';
+                                            addy37ab360468cc4fba6817dcaa6df7d0b1 =
+                                                addy37ab360468cc4fba6817dcaa6df7d0b1 +
+                                                '&#105;&#97;fr' + '&#46;' + '&#111;rg';
+                                            var addy_text37ab360468cc4fba6817dcaa6df7d0b1 = '&#105;nf&#111;' +
+                                                '&#64;' +
+                                                '&#105;&#97;fr' + '&#46;' + '&#111;rg';
+                                            document.getElementById('cloak37ab360468cc4fba6817dcaa6df7d0b1')
+                                                .innerHTML += '<a ' +
+                                                path + '\'' + prefix + ':' + addy37ab360468cc4fba6817dcaa6df7d0b1 +
+                                                '\'>' +
+                                                addy_text37ab360468cc4fba6817dcaa6df7d0b1 + '<\/a>';
+                                        </script>
+                                    </div>
+                                </li>
+                                <li class="el-item">
+                                    <div class="el-content uk-panel uk-h6">Tel. 612.200.0321</div>
+                                </li>
+                                <li class="el-item">
+                                    <div class="el-content uk-panel uk-h6"><a href="/blog" class="el-link">The IAFR
+                                            Blog</a></div>
+                                </li>
+                            </ul>
+
+                            <div class="uk-margin">
+                                <div class="uk-child-width-auto uk-grid-small uk-grid socialmedia" uk-grid="">
+                                    <div class="uk-first-column">
+                                        <a class="el-link uk-icon-button uk-icon" target="_blank"
+                                            href="http://facebook.com/refugeeministry" uk-icon="icon: facebook;"><svg
+                                                width="20" height="20" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg" data-svg="facebook">
+                                                <path
+                                                    d="M11,10h2.6l0.4-3H11V5.3c0-0.9,0.2-1.5,1.5-1.5H14V1.1c-0.3,0-1-0.1-2.1-0.1C9.6,1,8,2.4,8,5v2H5.5v3H8v8h3V10z">
+                                                </path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a class="el-link uk-icon-button uk-icon" target="_blank"
+                                            href="http://instagram.com/iafrefugees" uk-icon="icon: instagram;"><svg
+                                                width="20" height="20" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg" data-svg="instagram">
+                                                <path
+                                                    d="M13.55,1H6.46C3.45,1,1,3.44,1,6.44v7.12c0,3,2.45,5.44,5.46,5.44h7.08c3.02,0,5.46-2.44,5.46-5.44V6.44 C19.01,3.44,16.56,1,13.55,1z M17.5,14c0,1.93-1.57,3.5-3.5,3.5H6c-1.93,0-3.5-1.57-3.5-3.5V6c0-1.93,1.57-3.5,3.5-3.5h8 c1.93,0,3.5,1.57,3.5,3.5V14z">
+                                                </path>
+                                                <circle cx="14.87" cy="5.26" r="1.09"></circle>
+                                                <path
+                                                    d="M10.03,5.45c-2.55,0-4.63,2.06-4.63,4.6c0,2.55,2.07,4.61,4.63,4.61c2.56,0,4.63-2.061,4.63-4.61 C14.65,7.51,12.58,5.45,10.03,5.45L10.03,5.45L10.03,5.45z M10.08,13c-1.66,0-3-1.34-3-2.99c0-1.65,1.34-2.99,3-2.99s3,1.34,3,2.99 C13.08,11.66,11.74,13,10.08,13L10.08,13L10.08,13z">
+                                                </path>
+                                            </svg></a> </div>
+                                    <div>
+                                        <a class="el-link uk-icon-button uk-icon" target="_blank"
+                                            href="http://twitter.com/iafr" uk-icon="icon: twitter;"><svg width="20"
+                                                height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                                                data-svg="twitter">
+                                                <path
+                                                    d="M19,4.74 C18.339,5.029 17.626,5.229 16.881,5.32 C17.644,4.86 18.227,4.139 18.503,3.28 C17.79,3.7 17.001,4.009 16.159,4.17 C15.485,3.45 14.526,3 13.464,3 C11.423,3 9.771,4.66 9.771,6.7 C9.771,6.99 9.804,7.269 9.868,7.539 C6.795,7.38 4.076,5.919 2.254,3.679 C1.936,4.219 1.754,4.86 1.754,5.539 C1.754,6.82 2.405,7.95 3.397,8.61 C2.79,8.589 2.22,8.429 1.723,8.149 L1.723,8.189 C1.723,9.978 2.997,11.478 4.686,11.82 C4.376,11.899 4.049,11.939 3.713,11.939 C3.475,11.939 3.245,11.919 3.018,11.88 C3.49,13.349 4.852,14.419 6.469,14.449 C5.205,15.429 3.612,16.019 1.882,16.019 C1.583,16.019 1.29,16.009 1,15.969 C2.635,17.019 4.576,17.629 6.662,17.629 C13.454,17.629 17.17,12 17.17,7.129 C17.17,6.969 17.166,6.809 17.157,6.649 C17.879,6.129 18.504,5.478 19,4.74">
+                                                </path>
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <h1> </h1>
+                            <h5>Ministry Resources</h5>
+                            <ul class="uk-list">
+                                <li class="el-item">
+                                    <div class="el-content uk-panel uk-h6"><a href="/toolbox" class="el-link">The
+                                            IAFR Toolbox</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+
+
+
+
+                        </div>
+                        <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid="">
+                            <div class="uk-width-1-1@m uk-first-column">
+
+
+
+
+
+                                <hr>
+                                <div class="uk-margin">
+                                    <p style="text-align: center;">All photos on this website by IAFR.</p>
+                                </div>
+                                <div class="uk-margin">
+                                    <p style="text-align: center;">IAFR | 1515 East 66th Street | Minneapolis, MN&nbsp;
+                                        55423 | <span id="cloakd4945df5e0b08830507932a549ee7d97"><a
+                                                href="mailto:info@iafr.org">info@iafr.org</a></span>
+                                        <script type="text/javascript">
+                                            document.getElementById('cloakd4945df5e0b08830507932a549ee7d97').innerHTML =
+                                                '';
+                                            var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+                                            var path = 'hr' + 'ef' + '=';
+                                            var addyd4945df5e0b08830507932a549ee7d97 = '&#105;nf&#111;' + '&#64;';
+                                            addyd4945df5e0b08830507932a549ee7d97 =
+                                                addyd4945df5e0b08830507932a549ee7d97 +
+                                                '&#105;&#97;fr' + '&#46;' + '&#111;rg';
+                                            var addy_textd4945df5e0b08830507932a549ee7d97 = '&#105;nf&#111;' + '&#64;' +
+                                                '&#105;&#97;fr' + '&#46;' + '&#111;rg';
+                                            document.getElementById('cloakd4945df5e0b08830507932a549ee7d97')
+                                                .innerHTML += '<a ' + path +
+                                                '\'' + prefix + ':' + addyd4945df5e0b08830507932a549ee7d97 + '\'>' +
+                                                addy_textd4945df5e0b08830507932a549ee7d97 + '<\/a>';
+                                        </script> | 612.200.0321
+                                    </p>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- Optional JavaScript -->
+    <script src="{% static 'volunteers/js/app.js' %}"></script>
 </body>
 
 </html>
