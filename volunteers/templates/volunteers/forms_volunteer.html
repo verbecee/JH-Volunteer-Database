@@ -24,6 +24,7 @@ Filling Volunteer Forms
 
 
 {% block body %}
+
 <div class="container pt-4">
     <h5 class="float-right">Application progress: 1/8 completed...</h5><br>
 </div>
@@ -34,16 +35,16 @@ Filling Volunteer Forms
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
             <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" role="tab"
-                aria-controls="nav-profile" aria-selected="true" href="#nav-profile">Profile</a>
+                aria-controls="nav-profile" aria-selected="true" href="#nav-profile">
+                Profile </a>
 
             <a class="nav-item nav-link" id="nav-emmergency-tab" data-toggle="tab" href="#nav-emmergency" role="tab"
                 aria-controls="nav-emmergency" aria-selected="false">Emmergency
             </a>
 
             <a class="nav-item nav-link" id="nav-lang-tab" data-toggle="tab" href="#nav-lang" role="tab"
-                aria-controls="nav-lang" aria-selected="false">Language
+                aria-controls="nav-lang" aria-selected="false">Language </a>
 
-            </a>
             <a class="nav-item nav-link" id="nav-interest-tab" data-toggle="tab" href="#nav-interest" role="tab"
                 aria-controls="nav-interest" aria-selected="false">Interest
             </a>
@@ -72,10 +73,10 @@ Filling Volunteer Forms
         <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-home-tab">
             <H1>Personal Informations</H1>
             <div class="navigate float-right pb-5">
-                <a class="btn btn-primary" href="#">
+                {% comment %} <a class="btn btn-primary" href="#">
                     Back
-                </a>
-                <a class="btn btn-primary" href="#">
+                </a> {% endcomment %}
+                <a class="btn btn-primary" href=" #nav-emmergency">
                     Next
                 </a>
             </div>
@@ -239,9 +240,9 @@ Filling Volunteer Forms
                 <a class="btn btn-primary" href="#">
                     Back
                 </a>
-                <a class="btn btn-primary" href="#">
+                {% comment %} <a class="btn btn-primary" href="#">
                     Next
-                </a>
+                </a> {% endcomment %}
             </div>
 
             <div class="form">
