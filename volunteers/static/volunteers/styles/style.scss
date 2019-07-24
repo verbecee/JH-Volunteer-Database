@@ -1,3 +1,12 @@
+/* Global Variables */
+$primary-red: rgb(168, 19, 19);
+$black: rgb(20, 20, 20);
+
+.posn-content {
+    position: relative;
+    margin-top: 8rem;
+}
+
 img {
     max-width: 60%;
     padding: 0 0rem 0 3rem;
@@ -5,10 +14,12 @@ img {
 
 // Nav Styles
 .bground {
-    background: rgb(168, 19, 19);
-    padding: 1.0rem 4rem;
+    background: $primary-red;
+    padding: 1rem 4rem;
+    //position: fixed;
 
     ul {
+
         li {
             padding: 0 .5rem;
 
@@ -116,7 +127,7 @@ img {
 // Footer CSS
 footer {
     padding: 1rem 0;
-    background: rgb(20, 20, 20);
+    background: $black;
     color: rgb(211, 13, 13);
 
     a {
