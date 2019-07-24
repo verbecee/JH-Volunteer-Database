@@ -1,0 +1,53 @@
+{% extends 'volunteers/base.html' %}
+
+
+{% block title %}
+Testing Ideas
+{% endblock title %}
+<hr>
+
+
+{% block heading %}
+
+<h1 class="txt_instruct">Test Your Ideas</h1>
+
+{% endblock heading %}
+
+
+{% block body %}
+
+<div class="tab container">
+    <button class="tablinks" onclick="changeTab(event, 'teams')">Teams</button>
+    <button class="tablinks" onclick="changeTab(event, 'scenarios')">Scenarios</button>
+</div>
+
+<div class="content container">
+    <div class="tab-options">
+
+        <div class="teams-tab" id="teams-tab">
+
+            <body>
+                <form action="#" method="get">
+                    <h1>You are on the team page!</h1>
+                    <input type="submit" name="submit" value="Get Results!"><br>
+                </form>
+            </body>
+        </div>
+
+        <div class="scenarios-tab" id="scenarios-tab">
+
+            <body>
+                <form action="#" method="get">
+                    <h1>You are on the scenarios page!</h1>
+                    <input type="submit" name="submit" value="Get Results!"><br>
+                </form>
+            </body>
+        </div>
+
+    </div>
+</div>
+
+{% block footer %}
+{% endblock footer %}
+
+{% endblock body %}
