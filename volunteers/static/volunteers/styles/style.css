@@ -114,4 +114,8 @@ footer .container-fluid .container .socialmedia {
   grid-template-columns: 1fr 1fr 1fr 20fr;
 }
 
+fieldset.inlineLabels ul {
+  list-style: none;
+}
+
 /*# sourceMappingURL=style.css.map */
