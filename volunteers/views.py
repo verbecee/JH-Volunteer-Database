@@ -20,7 +20,7 @@ def vol_application(request):
         interest_form = InterestForm(request.POST)
         lang_form = LanguageForm(request.POST)
         event_form = EventForm(request.POST)
-        org_assocition = OrganizationAffiliationForm(request.POST)
+        org_association = OrganizationAffiliationForm(request.POST)
         traing_form = TrainingForm(request.POST)
         role_form = RoleForm(request.POST)
 
@@ -34,8 +34,8 @@ def vol_application(request):
             lang_form.save()
         if event_form.is_valid():
             event_form.save()
-        if org_assocition.is_valid():
-            org_assocition.save()
+        if org_association.is_valid():
+            org_association.save()
         if traing_form.is_valid():
             traing_form.save()
         if role_form.is_valid():
@@ -46,7 +46,7 @@ def vol_application(request):
     interest_form = InterestForm()
     lang_form = LanguageForm()
     event_form = EventForm()
-    org_assocition = OrganizationAffiliationForm()
+    org_association = OrganizationAffiliationForm()
     traing_form = TrainingForm()
     role_form = RoleForm()
     context = {
@@ -55,7 +55,7 @@ def vol_application(request):
         'interest_form': interest_form,
         'lang_form': lang_form,
         'event_form': event_form,
-        'org_assocition': org_assocition,
+        'org_association': org_association,
         'traing_form': traing_form,
         'role_form': role_form
 

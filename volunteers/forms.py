@@ -4,6 +4,7 @@ from django import forms
 # comments from Josh
 # Drop down of the calendar for birth days
 
+
 class VolunteerForm(forms.ModelForm):
     last_name = forms.CharField(
         max_length=30,
@@ -33,7 +34,7 @@ class VolunteerForm(forms.ModelForm):
         choices=(
             ("M", "Male"),
             ("F", "Female"),
-            ("O", "Others")
+            ("O", "Other")
         ),
         widget=forms.Select(
             attrs={
@@ -112,13 +113,6 @@ class VolunteerForm(forms.ModelForm):
         )
     )
 
-    notes = forms.CharField(
-        widget=forms.Textarea(
-            attrs={
-                'class': 'form-control'
-            }
-        )
-    )
     cross_cultural_experiences = forms.CharField(
         max_length=600,
         widget=forms.Textarea(
@@ -139,6 +133,14 @@ class VolunteerForm(forms.ModelForm):
     spirituality = forms.CharField(
         max_length=600,
         widget=forms.TextInput(
+            attrs={
+                'class': 'form-control'
+            }
+        )
+    )
+
+    notes = forms.CharField(
+        widget=forms.Textarea(
             attrs={
                 'class': 'form-control'
             }
