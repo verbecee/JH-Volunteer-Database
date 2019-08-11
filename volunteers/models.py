@@ -13,7 +13,7 @@ class Volunteer(models.Model):
         choices=(
             ("M", "Male"),
             ("F", "Female"),
-            ("O", "Others")
+            ("O", "Other")
         )
     )
     birth_date = models.DateField(blank=True, null=True)

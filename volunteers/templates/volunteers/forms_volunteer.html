@@ -1,5 +1,6 @@
 {% extends 'volunteers/base.html' %}
 
+
 {% comment %}
 
 Ideas for the user interface;
@@ -11,14 +12,14 @@ https://github.com/contact/privacy
 {% endcomment %}
 
 {% block title %}
-Filling Volunteer Forms
+Jonathan House Volunteer Portal
 {% endblock title %}
 <hr>
 
 
 {% block heading %}
 
-<h1 class="txt_instruct">Jonathan Volunteer Applications Form</h1>
+<h1 class="txt_instruct">Jonathan Volunteer Application</h1>
 {% endblock heading %}
 
 
@@ -36,17 +37,17 @@ Filling Volunteer Forms
 
             <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" role="tab"
                 aria-controls="nav-profile" aria-selected="true" href="#nav-profile">
-                Profile </a>
+                Volunteer Information </a>
 
-            <a class="nav-item nav-link" id="nav-emmergency-tab" data-toggle="tab" href="#nav-emmergency" role="tab"
-                aria-controls="nav-emmergency" aria-selected="false">Emmergency
+            <a class="nav-item nav-link" id="nav-emergency-tab" data-toggle="tab" href="#nav-emergency" role="tab"
+                aria-controls="nav-emergency" aria-selected="false">Emergency Contact
             </a>
 
             <a class="nav-item nav-link" id="nav-lang-tab" data-toggle="tab" href="#nav-lang" role="tab"
                 aria-controls="nav-lang" aria-selected="false">Language </a>
 
             <a class="nav-item nav-link" id="nav-interest-tab" data-toggle="tab" href="#nav-interest" role="tab"
-                aria-controls="nav-interest" aria-selected="false">Interest
+                aria-controls="nav-interest" aria-selected="false">Volunteer Interests
             </a>
 
             <a class="nav-item nav-link" id="nav-event-tab" data-toggle="tab" href="#nav-event" role="tab"
@@ -71,12 +72,12 @@ Filling Volunteer Forms
 
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-home-tab">
-            <H1>Personal Informations</H1>
+            <H1>Personal Information</H1>
             <div class="navigate float-right pb-5">
                 {% comment %} <a class="btn btn-primary" href="#">
                     Back
                 </a> {% endcomment %}
-                <a class="btn btn-primary" href=" #nav-emmergency">
+                <a class="btn btn-primary" href=" #nav-emergency">
                     Next
                 </a>
             </div>
@@ -93,8 +94,8 @@ Filling Volunteer Forms
 
         </div>
 
-        <div class="tab-pane fade" id="nav-emmergency" role="tabpanel" aria-labelledby="nav-emmergency-tab">
-            <H1>Volunteer Emmergency Contact</H1>
+        <div class="tab-pane fade" id="nav-emergency" role="tabpanel" aria-labelledby="nav-emergency-tab">
+            <H1>Volunteer Emergency Contact</H1>
             <div class="navigate float-right pb-5">
                 <a class="btn btn-primary" href="#">
                     Back
@@ -116,7 +117,7 @@ Filling Volunteer Forms
         </div>
 
         <div class="tab-pane fade" id="nav-lang" role="tabpanel" aria-labelledby="nav-lang-tab">
-            <h1>Language Proficency</h1>
+            <h1>Language Proficiency</h1>
             <div class="navigate float-right pb-5">
                 <a class="btn btn-primary" href="#">
                     Back
