@@ -6,7 +6,7 @@ from django.core.validators import MinLengthValidator
 class Volunteer(models.Model):
     last_name = models.CharField(max_length=30)
     first_name = models.CharField(max_length=30)
-    middle_name = models.CharField(max_length=30)
+    middle_name = models.CharField(max_length=30, blank=True, null=True)
 
     gender = models.CharField(
         max_length=2,
