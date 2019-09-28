@@ -13,6 +13,10 @@ def ideas(request):
     return render(request, 'volunteers/ideas.html')
 
 
+def vol_start(request):
+    return render(request, 'volunteers/application_start.html')
+
+
 def vol_application(request):
     if request.method == "POST":
         vol_form = VolunteerForm(request.POST)
