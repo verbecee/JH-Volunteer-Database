@@ -8,6 +8,16 @@ Volunteer Application Portal
 
 <h1 class="txt_instruct">Thanks for your interest!</h1>
 {% endblock heading %}
+
+
+{% block body %}
+    <p>Thank you so much for your interest in volunteering with Jonathan House. We look forward to working with you! This
+    volunteer application form takes less than 15 minutes to fill out. However, we ask you to fill this form out in one
+    sitting. After submitting the form and selecting which volunteer roles are of interest to you, there will be additional
+    training opportunities and information available for you to work through. Please reach out with any questions. Thanks again.</p>
+
+    <a class="btn btn-dark" href="{% url 'application' %}" role="button">Begin Application</a>
+{% endblock body %}
 {#<!DOCTYPE html>#}
 {#<html lang="en">#}
 {#<head>#}
